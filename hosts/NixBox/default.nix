@@ -5,15 +5,15 @@
 { config, pkgs, ... }:
 
 {
-  imports =
-    [
-      # Required
-      ./hardware-configuration.nix
-      ../../modules/system.nix
+  imports = [
+    # Required
+    ./hardware-configuration.nix
+    ../../modules/system.nix
 
-      # Host specific imports
-      ../../modules/plasma.nix
-    ];
+    # Host specific imports
+    ../../modules/plasma.nix
+    ../../modules/steam.nix
+  ];
 
   # Bootloader
   boot.loader = {
