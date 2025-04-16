@@ -16,7 +16,7 @@
     nixosConfigurations = {
 
       NixBox = let
-        username = "fraser"; # another username for this machine
+        username = "fraser";
         specialArgs = {inherit username;};
       in
         nixpkgs.lib.nixosSystem {
@@ -25,15 +25,14 @@
 
           modules = [
             ./hosts/NixBox
-            ./users/${username}/nixos.nix
 
-            home-manager.nixosModules.home-manager
-            {
+            home-manager.nixosModules.home-manager {
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
-              home-manager.users.${username} = import ./users/${username}/home.nix;
+              home-manager.users.${username} = import ./home.nix;
+
               # Make HM add this extension to files it conflicts with
               home-manager.backupFileExtension = "HM-backup";
             }

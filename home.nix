@@ -1,10 +1,19 @@
-{
+{pkgs, ...}: {
   ##################################################################################################################
   #
-  # NixOS Configuration
+  # All Ryan's Home Manager Configuration
   #
   ##################################################################################################################
 
-  users.users.fraser = {
+  imports = [
+    ./home/core.nix
+
+    ./home/programs
+    ./home/shell
+  ];
+
+  programs.git = {
+    userName = "Fraser MacColl";
+    userEmail = "fraser.a.maccoll@gmail.com";
   };
 }

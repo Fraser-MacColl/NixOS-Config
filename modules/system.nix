@@ -1,3 +1,7 @@
+#
+# Shared NixOS module amongst all installations
+#
+
 {
   pkgs,
   lib,
@@ -48,6 +52,11 @@
         LC_TIME = "en_GB.UTF-8";
     };
     console.keyMap = "uk";
+    services.xserver.xkb = {
+      layout = "gb";
+      variant = ",";
+    };
+
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
