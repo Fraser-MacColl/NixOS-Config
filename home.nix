@@ -11,6 +11,6 @@
     ./home/core.nix
     ./home/programs
     ./home/shell
-    ./home/git.nix
+    ./home/development
   ];
 }
