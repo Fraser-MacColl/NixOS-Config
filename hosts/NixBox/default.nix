@@ -1,17 +1,18 @@
-# Edit this configuration file to define what should be installed on
-# your system.  Help is available in the configuration.nix(5) man page
-# and in the NixOS manual (accessible by running ‘nixos-help’).
+#
+# NixOS module with NixBox specific configuration.
+#
 
 { config, pkgs, ... }:
 
 {
   imports =
     [
-      ../../modules/system.nix
-      ../../modules/plasma.nix
-
-      # Include the results of the hardware scan.
+      # Required
       ./hardware-configuration.nix
+      ../../modules/system.nix
+
+      # Host specific imports
+      ../../modules/plasma.nix
     ];
 
   # Bootloader
@@ -20,8 +21,13 @@
     systemd-boot.enable = true;
   };
 
+  # Networking
   networking.hostName = "NixBox";
   networking.networkmanager.enable = true;
+  # networking.firewall.allowedTCPPorts = [ ... ];
+  # networking.firewall.allowedUDPPorts = [ ... ];
+  # Or disable the firewall altogether.
+  networking.firewall.enable = false;
 
 
 

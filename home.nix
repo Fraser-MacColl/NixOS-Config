@@ -1,19 +1,16 @@
-{pkgs, ...}: {
-  ##################################################################################################################
-  #
-  # All Ryan's Home Manager Configuration
-  #
-  ##################################################################################################################
+#
+# Root home nix file used by HM.
+# Desired user packages should be set up here using the provided files in the ./home directory.
+#
 
+{
+  pkgs,
+  ...
+}: {
   imports = [
     ./home/core.nix
-
     ./home/programs
     ./home/shell
+    ./home/git.nix
   ];
-
-  programs.git = {
-    userName = "Fraser MacColl";
-    userEmail = "fraser.a.maccoll@gmail.com";
-  };
 }

@@ -1,3 +1,7 @@
+#
+# Browser home module configs.
+#
+
 {
   pkgs,
   config,
@@ -12,8 +16,6 @@
       ];
     };
 
-    firefox = {
-      enable = true;
-    };
+    firefox.enable = true;
   };
 }

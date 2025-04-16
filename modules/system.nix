@@ -1,5 +1,14 @@
 #
-# Shared NixOS module amongst all installations
+# Shared NixOS module amongst all installations.
+# This module sets up:
+#  - User account (Password needs set if first time installation)
+#  - Localisation of languages, text formatting, timezone, keyboard
+#  - System fonts and packages, accessible from root
+#  - Other miscellaneous setup, like audio and CUPS
+#
+# What this DOES NOT set up:
+#  - Networking, assuming each host will need unique setups
+#  - The DE/WM of the system
 #
 
 {
@@ -8,7 +17,10 @@
   username,
   ...
 }: {
-  # ============================= User related =============================
+
+  # #=---------------=#
+  # |  GENERAL SETUP  |
+  # #=---------------=#
 
   users.users.${username} = {
     isNormalUser = true;
@@ -16,15 +28,9 @@
     extraGroups = ["networkmanager" "wheel"];
   };
 
-  # given the users in this list the right to specify additional substituters via:
-  #    1. `nixConfig.substituers` in `flake.nix`
-  #    2. command line args `--options substituers http://xxx`
-  nix.settings.trusted-users = [username];
-
-  # customise /etc/nix/nix.conf declaratively via `nix.settings`
   nix.settings = {
-    # enable flakes globally
-    experimental-features = ["nix-command" "flakes"];
+    trusted-users = [username];
+    experimental-features = ["nix-command" "flakes"]; # enable flakes globally
   };
 
   # do garbage collection weekly to keep disk usage low
@@ -34,33 +40,45 @@
     options = lib.mkDefault "--delete-older-than 7d";
   };
 
-  # Allow unfree packages
+
+
+
+
+  # #=--------------=#
+  # |  LOCALISATION  |
+  # #=--------------=#
+
+  time.timeZone = "Europe/London";
+  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n.extraLocaleSettings = {
+    LC_ADDRESS = "en_GB.UTF-8";
+    LC_IDENTIFICATION = "en_GB.UTF-8";
+    LC_MEASUREMENT = "en_GB.UTF-8";
+    LC_MONETARY = "en_GB.UTF-8";
+    LC_NAME = "en_GB.UTF-8";
+    LC_NUMERIC = "en_GB.UTF-8";
+    LC_PAPER = "en_GB.UTF-8";
+    LC_TELEPHONE = "en_GB.UTF-8";
+    LC_TIME = "en_GB.UTF-8";
+  };
+
+  console.keyMap = "uk";
+  services.xserver.xkb = {
+    layout = "gb";
+    variant = "";
+  };
+
+
+
+
+
+  # #=-----------------=#
+  # |  SYSTEM PACKAGES  |
+  # #=-----------------=#
+
   nixpkgs.config.allowUnfree = true;
 
-  # Local stuff
-    time.timeZone = "Europe/London";
-    i18n.defaultLocale = "en_GB.UTF-8";
-    i18n.extraLocaleSettings = {
-        LC_ADDRESS = "en_GB.UTF-8";
-        LC_IDENTIFICATION = "en_GB.UTF-8";
-        LC_MEASUREMENT = "en_GB.UTF-8";
-        LC_MONETARY = "en_GB.UTF-8";
-        LC_NAME = "en_GB.UTF-8";
-        LC_NUMERIC = "en_GB.UTF-8";
-        LC_PAPER = "en_GB.UTF-8";
-        LC_TELEPHONE = "en_GB.UTF-8";
-        LC_TIME = "en_GB.UTF-8";
-    };
-    console.keyMap = "uk";
-    services.xserver.xkb = {
-      layout = "gb";
-      variant = ",";
-    };
-
-
-  # Enable CUPS to print documents.
-  services.printing.enable = true;
-
+  # FONTS
   fonts = {
     packages = with pkgs; [
       # icon fonts
@@ -87,19 +105,23 @@
     };
   };
 
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-
-  # List packages installed in system profile. To search, run:
-  # $ nix search wget
+  # PACKAGES
+  # Ideally only necessary for system admin, root accessible stuff.
+  # Anything user facing can be managed by HM
   environment.systemPackages = with pkgs; [
     vim
     wget
     curl
     git
   ];
+
+
+
+
+
+  # #=---------------=#
+  # |  MISCELLANEOUS  |
+  # #=---------------=#
 
   # Enable sound with pipewire.
   security.polkit.enable = true;
@@ -114,4 +136,7 @@
       jack.enable = true;
     };
   };
+
+  # Enable CUPS to print documents.
+  services.printing.enable = true;
 }
