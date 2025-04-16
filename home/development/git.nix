@@ -14,4 +14,8 @@
     userName = "Fraser MacColl";
     userEmail = "fraser.a.maccoll@gmail.com";
   };
+
+  programs.lazygit = {
+    enable = true
+  }
 }

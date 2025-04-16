@@ -6,5 +6,6 @@
   imports = [
     ./rust.nix
     ./java.nix
+    ./nix.nix
   ];
 }
