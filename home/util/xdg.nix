@@ -1,4 +1,7 @@
-{config, ...}: let
+{
+  config,
+  ...
+}: let
   browser = ["firefox.desktop"];
 
   # XDG MIME types

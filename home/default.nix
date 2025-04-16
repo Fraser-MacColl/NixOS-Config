@@ -12,5 +12,6 @@
     ./programs
     ./shell
     ./development
+    ./util
   ];
 }
