@@ -16,10 +16,7 @@
 
   # Bootloader
   boot.loader = {
-    efi = {
-      canTouchEfiVariables = true;
-      #efiSysMountPoint = "/boot/efi";
-    };
+    efi.canTouchEfiVariables = true;
     systemd-boot.enable = true;
   };
 

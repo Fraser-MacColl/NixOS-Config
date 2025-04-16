@@ -8,6 +8,9 @@
     # misc
     libnotify
     xdg-utils
+    zed-editor
+    ranger
+    neovim
   ];
 
   programs = {
