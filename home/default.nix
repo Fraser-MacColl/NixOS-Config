@@ -6,6 +6,8 @@
 {
   imports = [
     ./core.nix
+
+    ./media
     ./programs
     ./shell
     ./development
