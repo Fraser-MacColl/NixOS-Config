@@ -31,7 +31,7 @@
               home-manager.useUserPackages = true;
 
               home-manager.extraSpecialArgs = inputs // specialArgs;
-              home-manager.users.${username} = import ./home.nix;
+              home-manager.users.${username} = import ./home;
 
               # Make HM add this extension to files it conflicts with
               home-manager.backupFileExtension = "HM-backup";

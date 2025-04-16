@@ -4,13 +4,10 @@
 #
 
 {
-  pkgs,
-  ...
-}: {
   imports = [
-    ./home/core.nix
-    ./home/programs
-    ./home/shell
-    ./home/development
+    ./core.nix
+    ./programs
+    ./shell
+    ./development
   ];
 }
