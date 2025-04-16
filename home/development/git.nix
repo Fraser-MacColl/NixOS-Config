@@ -17,7 +17,7 @@
     extraConfig = {
       # GitHub credentials
       credential.helper = "manager";
-      credential.credentialStore = "plaintext";
+      credential.credentialStore = "plaintext"; # TODO Make secure
 
       # Automatically create branches on remote from new local
       push = { autoSetupRemote = true; };
