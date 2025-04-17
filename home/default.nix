@@ -9,7 +9,6 @@
 
     ./media
     ./games
-    ./programs
     ./shell
     ./development
     ./util
