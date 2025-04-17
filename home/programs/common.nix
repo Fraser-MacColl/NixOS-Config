@@ -7,7 +7,6 @@
   home.packages = with pkgs; [
     # misc
     libnotify
-    xdg-utils
     zed-editor
     ranger
   ];

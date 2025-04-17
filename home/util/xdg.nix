@@ -1,5 +1,6 @@
 {
   config,
+  pkgs,
   ...
 }: let
   browser = ["firefox.desktop"];
@@ -40,4 +41,8 @@ in {
       };
     };
   };
+
+  home.packages = with pkgs; [
+    xdg-utils
+  ];
 }
