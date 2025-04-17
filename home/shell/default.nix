@@ -1,18 +1,14 @@
-{config, ...}: let
-  d = config.xdg.dataHome;
-  c = config.xdg.configHome;
-  cache = config.xdg.cacheHome;
-in {
+#
+# Shell and terminal related imports.
+#
+
+{
+  ...
+}: {
   imports = [
-    ./terminals.nix
+    ./env.nix
+    ./bash.nix
+    ./alacritty.nix
     ./term-apps.nix
   ];
-
-  # add environment variables
-  home.sessionVariables = {
-    # set default applications
-    EDITOR = "nvim";
-    BROWSER = "firefox";
-    TERMINAL = "alacritty";
-  };
 }

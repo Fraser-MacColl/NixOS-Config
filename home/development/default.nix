@@ -8,5 +8,6 @@
     ./neovim.nix
     ./languages
     ./ide.nix
+    ./direnv.nix
   ];
 }
