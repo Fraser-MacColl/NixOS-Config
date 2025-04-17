@@ -8,6 +8,7 @@
     ./core.nix
 
     ./media
+    ./productivity
     ./games
     ./shell
     ./development
