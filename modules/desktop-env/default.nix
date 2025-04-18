@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    ./display-manager.nix
+    ./display-manager
     ./plasma.nix
   ];
 }
