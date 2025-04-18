@@ -11,7 +11,6 @@
     ../../modules/system.nix
 
     # Host specific imports
-    ../../modules/plasma.nix
     ../../modules/steam.nix
   ];
 

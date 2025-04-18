@@ -78,6 +78,9 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  # DE/WM + Login
+  imports = [ ./desktop-env ];
+
   # FONTS
   fonts = {
     packages = with pkgs; [
