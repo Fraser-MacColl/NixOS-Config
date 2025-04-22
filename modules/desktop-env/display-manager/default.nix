@@ -6,7 +6,7 @@
   ...
 }: {
   imports = [
-    # Some weird shit happening in greetd with cage, need to sort
+    # Some weird shit happening, still working on it
 #    ./greetd.nix
     ./sddm.nix
   ];
