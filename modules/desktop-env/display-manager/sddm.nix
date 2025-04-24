@@ -7,16 +7,7 @@
 }: {
   services.displayManager.sddm = {
     enable = true;
-
-    settings = {
-      General = {
-        Numlock = "on";
-      };
-    };
+    wayland.enable = true; # Run on wayland
+    autoNumlock = true;
   };
-
-  # Workaround to get numlock to be enabled, at least on kwin comp backend
-  # See https://github.com/sddm/sddm/issues/1830 for more
-  # Stil not working tho
-  environment.etc."sddm.conf.d/numlock.conf".text = ''Numlock=on'';
 }
