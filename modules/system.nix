@@ -18,6 +18,13 @@
   ...
 }: {
 
+  # #=--------=#
+  # |  KERNEL  |
+  # #=--------=#
+
+  # Zen kernel default
+  boot.kernelPackages = pkgs.linuxPackages_zen;
+
   # #=---------------=#
   # |  GENERAL SETUP  |
   # #=---------------=#
