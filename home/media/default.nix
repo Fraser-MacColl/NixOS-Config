@@ -15,5 +15,6 @@
   home.packages = with pkgs; [
     audacity
     vlc
+    spotify
   ];
 }
