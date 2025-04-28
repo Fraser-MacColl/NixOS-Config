@@ -9,6 +9,9 @@
   ...
 }: {
   home.packages = with pkgs; [
-    jetbrains-toolbox
+    #jetbrains-toolbox
+    jetbrains.goland
+    jetbrains.rust-rover
+    jetbrains.idea-ultimate
   ];
 }

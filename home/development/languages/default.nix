@@ -7,5 +7,6 @@
     ./rust.nix
     ./java.nix
     ./nix.nix
+    ./go.nix
   ];
 }
