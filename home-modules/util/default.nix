@@ -8,6 +8,7 @@
 }: {
   imports = [
     ./xdg.nix
+    ./fonts.nix
     ./zed.nix
     ./rclone.nix
     ./dolphin.nix

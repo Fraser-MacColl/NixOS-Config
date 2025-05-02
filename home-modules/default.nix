@@ -5,8 +5,6 @@
 
 {
   imports = [
-    ./core.nix
-
     ./media
     ./productivity
     ./games

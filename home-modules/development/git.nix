@@ -11,9 +11,6 @@
   programs.git = {
     enable = true;
 
-    userName = "Fraser MacColl";
-    userEmail = "fraser.a.maccoll@gmail.com";
-
     extraConfig = {
       # GitHub credentials
       credential.helper = "manager";

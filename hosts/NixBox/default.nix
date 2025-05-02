@@ -2,33 +2,24 @@
 # NixOS module with NixBox specific configuration.
 #
 
-{ config, pkgs, ... }:
-
 {
-  imports = [
-    # Required
-    ./hardware-configuration.nix
-    ../../modules/system.nix
+  ...
+}:{
+  networking.hostName = "NixBox";
 
-    # Host specific imports
-    ../../modules/steam.nix
+  imports = [
+    ./hardware-configuration.nix
+    ../../system-modules/core
+    ../../system-modules/steam.nix
+
+    # User modules
+    # For each user that should be present on the this host,
+    # import their specific system module whcih sets up their user account.
+    ../../users/fraser/NixBox/module.nix
   ];
 
-  # Bootloader
-  boot.loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot.enable = true;
-  };
-
-  # Networking
-  networking.hostName = "NixBox";
-  networking.networkmanager.enable = true;
-  # networking.firewall.allowedTCPPorts = [ ... ];
-  # networking.firewall.allowedUDPPorts = [ ... ];
-  # Or disable the firewall altogether.
-  networking.firewall.enable = false;
-
-
+  # Any host specific overrides can be put here E.G.
+  # boot.kernelPackages = lib.mkForce lib.pkgs.linuxPackages_zen;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
