@@ -2,10 +2,8 @@
 # System wide packages
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-} : {
   # Ideally only necessary for system admin, root accessible stuff.
   # Anything user facing can be managed by HM
 

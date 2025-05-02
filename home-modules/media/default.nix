@@ -2,10 +2,8 @@
 # Media related imports.
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   imports = [
     ./imv.nix
     ./feh.nix

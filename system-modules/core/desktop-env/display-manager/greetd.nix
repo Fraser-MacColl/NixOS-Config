@@ -2,10 +2,8 @@
 # Set up greetd login manager, using regreet as the greeter
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   # Display manager
   services.greetd = {
     enable = true;

@@ -2,10 +2,8 @@
 # Rclone config, set up to mount onedrive automatically
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   home.packages = with pkgs; [
     kdePackages.dolphin
   ];
@@ -27,5 +25,4 @@ MenuBar=Disabled
 [PreviewSettings]
 Plugins=appimagethumbnail,audiothumbnail,blenderthumbnail,comicbookthumbnail,cursorthumbnail,djvuthumbnail,ebookthumbnail,exrthumbnail,directorythumbnail,fontthumbnail,imagethumbnail,jpegthumbnail,kraorathumbnail,windowsexethumbnail,windowsimagethumbnail,mobithumbnail,opendocumentthumbnail,gsthumbnail,rawthumbnail,svgthumbnail,ffmpegthumbs
 '';
-
 }

@@ -2,9 +2,8 @@
 # System settings for the nix package manager
 #
 
+{ ... }:
 {
-  ...
-} : {
   nix.settings = {
     experimental-features = ["nix-command" "flakes"]; # enable flakes globally
 

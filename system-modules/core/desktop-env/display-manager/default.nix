@@ -3,8 +3,6 @@
 #
 
 {
-  ...
-}: {
   imports = [
     # Some weird shit happening, still working on it
 #    ./greetd.nix

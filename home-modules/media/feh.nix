@@ -3,9 +3,8 @@
 # https://feh.finalrewind.org/
 #
 
+{ ... }:
 {
-  ...
-}: {
   programs.feh = {
     enable = true;
   };

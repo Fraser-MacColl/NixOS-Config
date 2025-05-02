@@ -1,10 +1,9 @@
-{
-  pkgs,
-  ...
-}: {
-  home.packages = with pkgs; [
-  ];
+#
+# Terminal apps and utilities
+#
 
+{ ... }:
+{
   programs = {
     btop.enable = true;
 

@@ -2,9 +2,7 @@
 # Kernel configuration
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-} : {
   boot.kernelPackages = pkgs.linuxPackages_zen;
 }

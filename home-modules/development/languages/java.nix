@@ -2,10 +2,8 @@
 # Java setup
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   home.packages = with pkgs; [
     jdk # Latest LTS release, openJDK
   ];

@@ -2,10 +2,8 @@
 # Default Home-Manager config
 #
 
+{ ... }:
 {
-  ...
-} : {
-
   # Home-Manager stuff
   programs.home-manager.enable = true;
   home = {
@@ -24,5 +22,4 @@
     userName = "Fraser MacColl";
     userEmail = "fraser.a.maccoll@gmail.com";
   };
-
 }

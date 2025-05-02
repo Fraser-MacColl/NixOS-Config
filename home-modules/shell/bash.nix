@@ -1,10 +1,8 @@
 #
-# Environment switcher using .envrc files
+# Default Bash shell home config
 #
 
-{
-  ...
-}:
+{ ... }:
 {
   programs.bash = {
     enable = true;

@@ -2,10 +2,8 @@
 # Rclone config, set up to mount onedrive automatically
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   home.packages = with pkgs; [
     coreutils
     rclone

@@ -2,10 +2,8 @@
 # Minecraft, managed through prism launcher
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   home.packages = with pkgs; [
     prismlauncher
   ];

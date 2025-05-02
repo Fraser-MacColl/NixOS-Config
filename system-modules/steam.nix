@@ -3,9 +3,8 @@
 # so here's a module to do that.
 #
 
+{ ... }:
 {
-  ...
-}: {
   programs.steam = {
     enable = true;
 

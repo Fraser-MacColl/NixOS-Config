@@ -3,8 +3,6 @@
 #
 
 {
-  ...
-}: {
   imports = [
     ./office.nix
     ./thunderbird.nix

@@ -2,9 +2,8 @@
 # Thunderbird email client setup
 #
 
+{ ... }:
 {
-  ...
-}: {
   # TODO try and understand this stuff better
   accounts.email.accounts = {
     mainEmail = {

@@ -2,9 +2,7 @@
 # Environment switcher using .envrc files
 #
 
-{
-  ...
-}:
+{ ... }:
 {
   programs.direnv = {
     enable = true;

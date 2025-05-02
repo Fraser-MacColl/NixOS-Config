@@ -3,8 +3,6 @@
 #
 
 {
-  ...
-}: {
   imports = [
     ./minecraft.nix
     ./discord.nix

@@ -2,12 +2,8 @@
 # Git home module setup
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  config,
-  username,
-  ...
-}: {
   programs.git = {
     enable = true;
 

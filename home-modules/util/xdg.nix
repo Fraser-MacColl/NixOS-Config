@@ -1,8 +1,9 @@
-{
-  config,
-  pkgs,
-  ...
-}: let
+#
+# XDG related config
+#
+
+{ config, pkgs, ... }:
+let
   browser = [ "firefox.desktop" ];
 
   # XDG MIME types
@@ -21,7 +22,8 @@
     "x-scheme-handler/https" = browser;
     "x-scheme-handler/unknown" = browser;
   };
-in {
+in
+{
   xdg = {
     enable = true;
     cacheHome = config.home.homeDirectory + "/.local/cache";

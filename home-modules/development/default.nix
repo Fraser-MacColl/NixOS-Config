@@ -1,10 +1,9 @@
 #
 # Development related imports.
 #
+
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   imports = [
     ./git.nix
     ./neovim.nix

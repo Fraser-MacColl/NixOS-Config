@@ -2,9 +2,8 @@
 # Miscellaneous other system configs
 #
 
+{ ... }:
 {
-  ...
-} : {
   # Enable sound with pipewire.
   security.polkit.enable = true;
   security.rtkit.enable = true;

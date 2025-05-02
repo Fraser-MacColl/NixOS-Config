@@ -2,10 +2,8 @@
 # Go lang setup
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   home.packages = with pkgs; [
     go
   ];

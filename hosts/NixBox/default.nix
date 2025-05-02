@@ -2,9 +2,8 @@
 # NixOS module with NixBox specific configuration.
 #
 
+{ ... }:
 {
-  ...
-}:{
   networking.hostName = "NixBox";
 
   imports = [

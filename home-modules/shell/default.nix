@@ -3,8 +3,6 @@
 #
 
 {
-  ...
-}: {
   imports = [
     ./env.nix
     ./bash.nix

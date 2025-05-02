@@ -1,32 +1,31 @@
 #
 # Default Home-Manager fonts
 #
- {
-   pkgs,
-   ...
- } : {
-   home.packages = with pkgs; [
-     # icon fonts
-     material-design-icons
 
-     # normal fonts
-     noto-fonts
-     noto-fonts-cjk-sans
-     noto-fonts-emoji
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    # icon fonts
+    material-design-icons
 
-     # nerdfonts
-     nerd-fonts.fira-code
-     nerd-fonts.jetbrains-mono
-   ];
+    # normal fonts
+    noto-fonts
+    noto-fonts-cjk-sans
+    noto-fonts-emoji
 
-   fonts.fontconfig = {
-     enable = true;
+    # nerdfonts
+    nerd-fonts.fira-code
+    nerd-fonts.jetbrains-mono
+  ];
 
-     defaultFonts = {
-       serif = ["Noto Serif" "Noto Color Emoji"];
-       sansSerif = ["Noto Sans" "Noto Color Emoji"];
-       monospace = ["JetBrainsMono Nerd Font" "Noto Color Emoji"];
-       emoji = ["Noto Color Emoji"];
-     };
-   };
- }
+  fonts.fontconfig = {
+    enable = true;
+
+    defaultFonts = {
+      serif = [ "Noto Serif" "Noto Color Emoji" ];
+      sansSerif = [ "Noto Sans" "Noto Color Emoji" ];
+      monospace = [ "JetBrainsMono Nerd Font" "Noto Color Emoji" ];
+      emoji = [ "Noto Color Emoji" ];
+    };
+  };
+}

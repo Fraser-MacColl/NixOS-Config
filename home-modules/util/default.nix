@@ -2,10 +2,8 @@
 # Other imports, utilities and other uncategorised stuff.
 #
 
+{ pkgs, ... }:
 {
-  pkgs,
-  ...
-}: {
   imports = [
     ./xdg.nix
     ./fonts.nix
