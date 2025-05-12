@@ -22,10 +22,18 @@
     download-buffer-size = 128 * 1024 * 1024; # 128 MiB up from 64 MiB default
   };
 
-  # do garbage collection weekly to keep disk usage low
-  nix.gc = {
-    automatic = true;
-    dates = "weekly";
-    options = "--delete-older-than 7d";
+  # do garbage collection and store optimisation weekly to keep disk usage low
+  nix = {
+    gc = {
+      automatic = true;
+      dates = "weekly";
+      options = "--delete-older-than 7d";
+      persistent = true;
+    };
+    optimise = {
+      automatic = true;
+      dates = [ "weekly" ];
+      persistent = true;
+    };
   };
 }
